@@ -1,0 +1,155 @@
+:root {
+	--black: #000000;
+	--white: #ffffff;
+	--red: #ff0000;
+	--main: #595959;
+	--contrast-dark: #3f3f3f;
+	--contrast-light: #a0a0a0;
+	--olR: 1px solid red;
+	--ol: 1px solid white;
+	--olb: 1px solid blue;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+}
+
+.container {
+	display: flex;
+	box-sizing: border-box;
+	justify-content: center;
+	align-items: center;
+}
+
+.content {
+	display: flex;
+	box-sizing: content-box;
+	justify-content: center;
+	align-items: center;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+	background-color: var(--black);
+	justify-content: center;
+	display: flex;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	background-color: var(--contrast-dark);
+	max-width: 1400px;
+}
+
+.main-form-wrapper {
+	width: 60vw;
+	height: 80vh;
+	border: 3px solid var(--black);
+	background-color: var(--main);
+}
+
+.main-form-wrapper > .container {
+	height: 100%;
+	width: 50%;
+	border: 1px solid var(--contrast-light);
+	padding: 2px;
+}
+
+.registration-wrapper,
+.login-wrapper {
+	height: 100%;
+	width: 100%;
+	outline: var(--olR);
+	flex-direction: column;
+	justify-content: flex-start;
+	row-gap: 20px;
+}
+
+.registration-wrapper > div,
+.login-wrapper > div {
+	width: 70%;
+	height: 60px;
+
+	position: relative;
+}
+
+.form-title-container {
+	width: 100%;
+	margin-top: 2px;
+	place-content: center;
+	text-align: center;
+	font-size: 1.5rem;
+	border: none;
+}
+
+.main-form-div {
+	height: 40px;
+	margin-top: 25px;
+	justify-content: space-between;
+	padding: 0 5px;
+	font-size: 1.2rem;
+	outline: var(--olR);
+}
+
+.main-form-div input {
+	width: 100%;
+	height: 90%;
+	border-radius: inherit;
+	background-color: var(--main);
+	box-shadow: 1px 1px 1px 1px var(--contrast-dark);
+	border-radius: 8px;
+	padding-left: 2px;
+}
+
+.main-form-div input::placeholder {
+	color: var(--black);
+	font-size: 1rem;
+	font-weight: 600;
+}
+
+.main-form-div .fa-solid {
+	position: absolute;
+	right: 10px;
+}
+
+.form-button-container {
+	justify-content: center;
+	border: none;
+	box-shadow: none;
+	height: 20px;
+	outline: var(--olR);
+}
+
+.form-button {
+	width: 250px;
+	height: 100%;
+	background: var(--black);
+	border-radius: 10px;
+	color: var(--contrast-light);
+	box-shadow: 1px 1px 1px 1px var(--contrast-dark);
+	font-size: 1.2rem;
+}
+
+.alt-login-container {
+	justify-content: space-evenly;
+	font-size: 25px;
+	border: none;
+	box-shadow: none;
+}
+
+.alt-login-container .fa-brands {
+	border: 1px solid var(--black);
+	padding: 5px;
+}
+
+.fa-brands:hover {
+	transform: scale(1.2);
+}
