@@ -50,6 +50,4 @@ const toggleCoverForm = (toggler, obj, obj2) => {
 		}
 	});
 };
-
 toggleCoverForm(coverButton, login, register);
-toggleClass(coverButton, register, login);
