@@ -18,28 +18,41 @@
 	</head>
 	<body>
 		<div class="main-form-wrapper container">
+			<div id="form-cover" class="form-cover container login-active">
+				<div class="container form-cover-content-wrapper">
+					<h1 id="form-cover-header">Hello, Welcome</h1>
+					<div class="container trigger-container">
+						<h4 id="form-cover-question">Don't Have An Acount?'</h4>
+						<button id="form-cover-button">Register</button>
+					</div>
+				</div>
+			</div>
+
 			<div class="container registration-container">
 				<div class="container registration-wrapper">
 					<div class="form-title-container">
 						<h2>Registration</h2>
 					</div>
-					<div class="username-container content main-form-div">
+					<div class="username-container content input-div">
 						<input type="text" placeholder="Username" /> <i class="fa-solid fa-user"></i>
 					</div>
-					<div class="email-container content main-form-div">
+					<div class="email-container content input-div">
 						<input type="email" placeholder="E-mail" /> <i class="fa-solid fa-envelope"></i>
 					</div>
-					<div class="password-container content main-form-div">
+					<div class="password-container content input-div">
 						<input type="password" placeholder="Password" /> <i class="fa-solid fa-lock"></i>
 					</div>
-					<div class="button-container content">
+					<div class="form-button-container content">
 						<button class="form-button content">Register</button>
 					</div>
 					<div class="alt-login-container container">
-						<i class="fa-brands fa-google"></i>
-						<i class="fa-brands fa-facebook"></i>
-						<i class="fa-brands fa-instagram"></i>
-						<i class="fa-brands fa-github"></i>
+						<h6>or login with account</h6>
+						<div class="brands-wrapper container">
+							<i class="fa-brands fa-google"></i>
+							<i class="fa-brands fa-facebook"></i>
+							<i class="fa-brands fa-instagram"></i>
+							<i class="fa-brands fa-github"></i>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -48,19 +61,29 @@
 					<div class="form-title-container">
 						<h2>Login</h2>
 					</div>
-					<div class="username-container content">username <i class="fa-solid fa-user"></i></div>
-					<div class="password-container content">password <i class="fa-solid fa-lock"></i></div>
-					<div class="button-container content">
-						<button class="form-button content">Register</button>
+					<div class="username-container content input-div">
+						<input type="text" placeholder="Username" /> <i class="fa-solid fa-user"></i>
+					</div>
+					<div class="password-container content input-div">
+						<input type="password" placeholder="Password" /> <i class="fa-solid fa-lock"></i>
+					</div>
+					<div class="form-button-container content login-button-container">
+						<a href="#">Forgot Password?</a>
+						<button class="form-button content">Login</button>
 					</div>
 					<div class="alt-login-container container">
-						<i class="fa-brands fa-google"></i>
-						<i class="fa-brands fa-facebook"></i>
-						<i class="fa-brands fa-instagram"></i>
-						<i class="fa-brands fa-github"></i>
+						<h6>or login with account</h6>
+						<div class="brands-wrapper container">
+							<i class="fa-brands fa-google"></i>
+							<i class="fa-brands fa-facebook"></i>
+							<i class="fa-brands fa-instagram"></i>
+							<i class="fa-brands fa-github"></i>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+
+		<script src="./login.js"></script>
 	</body>
 </html>
