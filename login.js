@@ -35,6 +35,12 @@ const registerActive = 'register-active';
 const flexActive = 'flex-active';
 const flexInactive = 'flex-inactive';
 
+const registerContainer = getById('registration-container');
+const logInContainer = getById('login-container');
+
+const mobileForty = 'mobile-forty';
+const mobileSixty = 'mobile-sixty';
+
 const toggleCoverForm = (toggler, obj, obj2) => {
 	toggler.addEventListener(click, function () {
 		if (!formCover.classList.contains(registerActive)) {
@@ -58,16 +64,21 @@ const toggleCoverForm = (toggler, obj, obj2) => {
 };
 toggleCoverForm(coverButton, login, register);
 
-const registerContainer = getById('registration-container');
-const logInContainer = getById('login-container');
-
-const mobileForty = 'mobile-forty';
-const mobileSixty = 'mobile-sixty';
-
-if (formCover.classList.contains(logInActive) && window.innerWidth <= 500) {
-	toggleClass(registerContainer, mobileForty);
-	toggleClass(logInContainer, mobileSixty);
-} else if (formCover.classList.contains(registerActive) && window.innerWidth <= 500) {
-	toggleClass(registerContainer, mobileSixty);
-	toggleClass(logInContainer, mobileForty);
+if (window.innerWidth <= 500) {
+	addClass(registerContainer, mobileForty);
+	addClass(logInContainer, mobileSixty);
 }
+
+coverButton.addEventListener(click, function () {
+	if (formCover.classList.contains(registerActive)) {
+		toggleClass(registerContainer, mobileForty);
+		toggleClass(registerContainer, mobileSixty);
+		toggleClass(logInContainer, mobileSixty);
+		toggleClass(logInContainer, mobileForty);
+	} else {
+		toggleClass(registerContainer, mobileForty);
+		toggleClass(registerContainer, mobileSixty);
+		toggleClass(logInContainer, mobileSixty);
+		toggleClass(logInContainer, mobileForty);
+	}
+});
