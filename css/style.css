@@ -142,6 +142,10 @@ body {
 	background-color: var(--main);
 }
 
+.registration-wrapper {
+	display: none;
+}
+
 .form-title-container {
 	width: 100%;
 	margin-top: 2px;
@@ -235,4 +239,12 @@ body {
 
 .fa-brands:hover {
 	transform: scale(1.2);
+}
+
+.flex-active {
+	display: flex;
+}
+
+.flex-inactive {
+	display: none;
 }

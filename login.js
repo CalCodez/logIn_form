@@ -29,9 +29,13 @@ const coverButton = getById('form-cover-button');
 const formCover = getById('form-cover');
 const coverHeader = getById('form-cover-header');
 const formQuestion = getById('form-cover-question');
+const registrationWrapper = getById('registration-wrapper');
+const logInWrapper = getById('login-wrapper');
 
 const logInActive = 'login-active';
 const registerActive = 'register-active';
+const flexActive = 'flex-active';
+const flexInactive = 'flex-inactive';
 
 const toggleCoverForm = (toggler, obj, obj2) => {
 	toggler.addEventListener(click, function () {
@@ -41,12 +45,16 @@ const toggleCoverForm = (toggler, obj, obj2) => {
 			textContent(coverHeader, obj.header);
 			textContent(formQuestion, obj.question);
 			textContent(coverButton, obj.buttonText);
+			toggleClass(registrationWrapper, flexActive);
+			toggleClass(logInWrapper, flexInactive);
 		} else {
 			toggleClass(formCover, logInActive);
 			toggleClass(formCover, registerActive);
 			textContent(coverHeader, obj2.header);
 			textContent(formQuestion, obj2.question);
 			textContent(coverButton, obj2.buttonText);
+			toggleClass(registrationWrapper, flexActive);
+			toggleClass(logInWrapper, flexInactive);
 		}
 	});
 };
