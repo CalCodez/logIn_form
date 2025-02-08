@@ -1,0 +1,62 @@
+@media (max-width: 10024px) {
+	.main-form-wrapper {
+		width: 80%;
+	}
+}
+
+@media (max-width: 768px) {
+	.main-form-wrapper {
+		width: 90%;
+	}
+}
+
+@media (max-width: 500px) {
+	.main-form-wrapper {
+		width: 100%;
+	}
+}
+
+@media (max-width: 500px) {
+	.form-cover.login-active {
+		justify-content: flex-start;
+		width: 40%;
+	}
+
+	.form-cover.register-active {
+		justify-content: flex-end;
+		width: 40%;
+	}
+
+	.form-cover-content-wrapper {
+		width: 100%;
+		border-radius: inherit;
+	}
+
+	.form-cover-content-wrapper h1 {
+		color: var(--contrast-light);
+		font-weight: 400;
+		font-size: 1.8rem;
+		outline: 1px solid yellow;
+	}
+
+	.trigger-container {
+		outline: var(--ol);
+		width: fit-content;
+	}
+
+	.trigger-container h4 {
+		outline: var(--ol);
+		color: var(--contrast-light);
+	}
+
+	.trigger-container button {
+		outline: var(--ol);
+	}
+
+	.main-form-wrapper .login-container {
+		outline: 1px solid red;
+	}
+	.main-form-wrapper .registration-container {
+		outline: var(--olR);
+	}
+}

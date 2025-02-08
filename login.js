@@ -21,8 +21,6 @@ const coverObj = {
 
 const { register, login } = coverObj;
 
-console.log(register.header);
-
 const click = 'click';
 
 const coverButton = getById('form-cover-button');
@@ -59,3 +57,17 @@ const toggleCoverForm = (toggler, obj, obj2) => {
 	});
 };
 toggleCoverForm(coverButton, login, register);
+
+const registerContainer = getById('registration-container');
+const logInContainer = getById('login-container');
+
+const mobileForty = 'mobile-forty';
+const mobileSixty = 'mobile-sixty';
+
+if (formCover.classList.contains(logInActive) && window.innerWidth <= 500) {
+	toggleClass(registerContainer, mobileForty);
+	toggleClass(logInContainer, mobileSixty);
+} else if (formCover.classList.contains(registerActive) && window.innerWidth <= 500) {
+	toggleClass(registerContainer, mobileSixty);
+	toggleClass(logInContainer, mobileForty);
+}
