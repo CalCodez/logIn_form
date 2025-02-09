@@ -1,12 +1,12 @@
-@media (max-width: 10024px) {
+@media (max-width: 1024px) {
 	.main-form-wrapper {
-		width: 80%;
+		width: 90%;
 	}
 }
 
 @media (max-width: 768px) {
 	.main-form-wrapper {
-		width: 90%;
+		width: 95%;
 	}
 }
 
@@ -14,9 +14,6 @@
 	.main-form-wrapper {
 		width: 100%;
 	}
-}
-
-@media (max-width: 500px) {
 	.form-cover.login-active {
 		justify-content: flex-start;
 		width: 40%;
@@ -36,27 +33,49 @@
 		color: var(--contrast-light);
 		font-weight: 400;
 		font-size: 1.8rem;
-		outline: 1px solid yellow;
+		text-align: center;
+		width: fit-content;
 	}
 
-	.trigger-container {
-		outline: var(--ol);
+	.trigger-container button {
+		width: 130px;
+	}
+
+	.trigger-container h4 {
+		color: var(--contrast-light);
+	}
+
+	.input-div {
+		width: 80%;
+	}
+}
+
+@media (max-width: 380px) {
+	.form-cover-content-wrapper {
+		row-gap: 25px;
+	}
+	.form-cover-content-wrapper h1 {
+		color: var(--contrast-light);
+		font-weight: 400;
+		font-size: 1.5rem;
+		text-align: center;
 		width: fit-content;
 	}
 
 	.trigger-container h4 {
-		outline: var(--ol);
-		color: var(--contrast-light);
+		font-size: 0.9rem;
+	}
+	.trigger-container {
+		row-gap: 10px;
 	}
 
 	.trigger-container button {
-		outline: var(--ol);
+		width: 100px;
 	}
 
-	.main-form-wrapper .login-container {
-		outline: 1px solid red;
-	}
-	.main-form-wrapper .registration-container {
-		outline: var(--olR);
+	.form-button {
+		width: 120px;
+		font: 1rem;
+		padding: 2px;
 	}
 }
