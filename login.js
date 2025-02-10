@@ -1,9 +1,12 @@
 const getById = (id) => document.getElementById(id);
 const getByClass = (arg) => document.getElementsByClassName(arg);
+const createElement = (elm) => document.createElement('elm');
 const addClass = (elm, cls) => elm.classList.add(cls);
 const removeClass = (elm, cls) => elm.classList.remove(cls);
 const toggleClass = (elm, cls) => elm.classList.toggle(cls);
 const textContent = (elm, txt) => (elm.textContent = txt);
+const appendChild = (parent, child) => parent.appendChild(child);
+const removeChild = (parent, child) => parent.removeChild(child);
 
 const coverObj = {
 	register: {
@@ -81,4 +84,104 @@ coverButton.addEventListener(click, function () {
 		toggleClass(logInContainer, mobileSixty);
 		toggleClass(logInContainer, mobileForty);
 	}
+});
+
+const actionContainer = getById('action-container');
+
+const actionObj = {
+	newUser: {
+		button: getById('register-btn'),
+		text: `You have Created An Account!`,
+		inputs: {
+			userName: getById('register-user'),
+			email: getById('register-email'),
+			password: getById('register-password'),
+		},
+	},
+
+	user: {
+		button: getById('login-btn'),
+		text: `You have logged In!`,
+		inputs: { userName: getById('login-user'), password: getById('login-password') },
+	},
+};
+
+const { newUser, user } = actionObj;
+
+const alertContainer = getById('alert-container');
+const actionTextContainer = getById('action-text-container');
+const actionText = createElement('p');
+
+newUser.button.addEventListener(click, function () {
+	if (
+		newUser.inputs.userName.value == '' &&
+		newUser.inputs.email.value == '' &&
+		newUser.inputs.password.value == ''
+	) {
+		toggleClass(alertContainer, flexInactive);
+	} else if (
+		newUser.inputs.userName.value == '' &&
+		!newUser.inputs.email.value == '' &&
+		!newUser.inputs.password.value == ''
+	) {
+		toggleClass(alertContainer, flexInactive);
+		textContent(alertContainer, 'Username Required!');
+	} else if (
+		!newUser.inputs.userName.value == '' &&
+		newUser.inputs.email.value == '' &&
+		newUser.inputs.password.value == ''
+	) {
+		toggleClass(alertContainer, flexInactive);
+		textContent(alertContainer, 'Email And Password Required!');
+	} else if (
+		!newUser.inputs.userName.value == '' &&
+		!newUser.inputs.email.value == '' &&
+		newUser.inputs.password.value == ''
+	) {
+		toggleClass(alertContainer, flexInactive);
+		textContent(alertContainer, 'PLEASE CREATE A PASSWORD!');
+	} else if (
+		!newUser.inputs.userName.value == '' &&
+		newUser.inputs.email.value == '' &&
+		!newUser.inputs.password == ''
+	) {
+		toggleClass(alertContainer, flexInactive);
+		textContent(alertContainer, 'Please Enter A Valid Email');
+	} else if (
+		newUser.inputs.userName.value == '' &&
+		!newUser.inputs.email.value == '' &&
+		newUser.inputs.password.value == ''
+	) {
+		toggleClass(alertContainer, flexInactive);
+		textContent(alertContainer, 'Username and Password Required!');
+	} else {
+		toggleClass(actionContainer, flexInactive);
+		textContent(actionText, newUser.text);
+		appendChild(actionTextContainer, actionText);
+	}
+});
+
+user.button.addEventListener(click, function () {
+	if (user.inputs.userName.value == '' && user.inputs.password.value == '') {
+		toggleClass(alertContainer, flexInactive);
+	} else if (user.inputs.userName.value == '' && !user.inputs.password.value == '') {
+		toggleClass(alertContainer, flexInactive);
+		textContent(alertContainer, 'Username Required!');
+	} else if (!user.inputs.userName.value == '' && user.inputs.password.value == '') {
+		toggleClass(alertContainer, flexInactive);
+		textContent(alertContainer, 'Please Enter Password!');
+	} else {
+		toggleClass(actionContainer, flexInactive);
+		textContent(actionText, user.text);
+		appendChild(actionTextContainer, actionText);
+	}
+});
+
+actionContainer.addEventListener(click, function () {
+	toggleClass(actionContainer, flexInactive);
+	removeChild(actionTextContainer, actionText);
+});
+
+alertContainer.addEventListener(click, function () {
+	toggleClass(alertContainer, flexInactive);
 });
