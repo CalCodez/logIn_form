@@ -111,6 +111,7 @@ const { newUser, user } = actionObj;
 const alertContainer = getById('alert-container');
 const actionTextContainer = getById('action-text-container');
 const actionText = createElement('p');
+const greetText = getById('greeting-text');
 
 newUser.button.addEventListener(click, function () {
 	if (
@@ -154,8 +155,16 @@ newUser.button.addEventListener(click, function () {
 	) {
 		toggleClass(alertContainer, flexInactive);
 		textContent(alertContainer, 'Username and Password Required!');
+	} else if (
+		newUser.inputs.userName.value == '' &&
+		newUser.inputs.email.value == '' &&
+		!newUser.inputs.password.value == ''
+	) {
+		toggleClass(alertContainer, flexInactive);
+		textContent(alertContainer, 'Username and Valid Email Required!');
 	} else {
 		toggleClass(actionContainer, flexInactive);
+		textContent(greetText, `Welcome ${newUser.inputs.userName.value}!`);
 		textContent(actionText, newUser.text);
 		appendChild(actionTextContainer, actionText);
 	}
@@ -172,6 +181,8 @@ user.button.addEventListener(click, function () {
 		textContent(alertContainer, 'Please Enter Password!');
 	} else {
 		toggleClass(actionContainer, flexInactive);
+		textContent(greetText, `Hello ${user.inputs.userName.value}!`);
+
 		textContent(actionText, user.text);
 		appendChild(actionTextContainer, actionText);
 	}

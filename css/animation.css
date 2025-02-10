@@ -125,3 +125,34 @@
 		transform: scale3d(1, 1, 1);
 	}
 }
+
+.alert-container {
+	-webkit-animation-name: slideInDown;
+	animation-name: slideInDown;
+	-webkit-animation-duration: 1s;
+	animation-duration: 0.2s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+@-webkit-keyframes slideInDown {
+	0% {
+		-webkit-transform: translateY(-10%);
+		transform: translateY(-10%);
+		visibility: visible;
+	}
+	100% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+}
+@keyframes slideInDown {
+	0% {
+		-webkit-transform: translateY(-10%);
+		transform: translateY(-10%);
+		visibility: visible;
+	}
+	100% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+}
